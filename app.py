@@ -33,7 +33,6 @@ def make_chorme_driver(*opcoes: str) -> webdriver.Chrome:
 if __name__ =='__main__':
     driver = make_chorme_driver('--start-maximized')
     driver.get('https://github.com/')
-    
     TIME_TO_WAIT = 10
 
     try:
@@ -45,7 +44,6 @@ if __name__ =='__main__':
                 (By.LINK_TEXT, "Sign in")
             )
         )
-
 
         botao_login.click()
 
@@ -85,5 +83,8 @@ if __name__ =='__main__':
     except:
         pass
     
+    # outra forma de buscar elementos
+    # botaoX = driver.find_element(By.ID, "nome id")
+
     sleep(10)
     
